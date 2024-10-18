@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e5ddd5; 
+    background-color: #201e1d; 
+    max-height: 100vh;
+}
+
+.chat-container {
+    max-width: 30vw;
+    height: 90vh;
+    margin: 5vh auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    background-color: #075e54; 
+    background-color: #202c33; 
+    padding: 10px;
+    color: white;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-info h3 {
+    margin: 0;
+}
+
+.chat-info p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.chat-body {
+    padding: 20px;
+    height: 100%; 
+    width: 100%; 
+    margin: 0 auto; 
+    overflow-y: auto;
+    background-color: transparent;
+    background: url(wallpaper.jpg) no-repeat center center; 
+    background-attachment: fixed; 
+    position: relative;
+    z-index: 1; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Style for scrollbar */
+.chat-body::-webkit-scrollbar {
+    width: 12px; 
+}
+
+.chat-body::-webkit-scrollbar-track {
+    background: #2c2f33; 
+    border-radius: 10px; 
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+    background-color: #075e54; 
+    border-radius: 10px; 
+    border: 3px solid #2c2f33; 
+}
+
+.chat-body::-webkit-scrollbar-thumb:hover {
+    background-color: #007567; 
+}
+
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    max-width: 80%;
+    position: relative;
+}
+
+.message-received {
+    background-color: #fff; 
+    background-color: #202c33; 
+    align-self: flex-start;
+    color: #000; 
+    color: white; 
+}
+
+.message-sent {
+    background-color: #dcf8c6; 
+    background-color: #005c4b; 
+    align-self: flex-end;
+    margin-left: auto;
+    color: #000; 
+    color: #ffffff; 
+}
+
+.message-time {
+    font-size: 10px;
+    color: gray;
+    margin-top: 5px;
+}
+
+.message-text {
+    margin: 0;
+}
+
+#toggleMode {
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    padding: 10px 15px; 
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    color: white; 
+    border: 2px solid #fff; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #201e1d; 
+}
+
+body.dark-mode .chat-header {
+    background-color: #202c33; 
+}
+
+body.dark-mode .message-received {
+    background-color: #202c33;
+    color: white;
+}
+
+body.dark-mode .message-sent {
+    background-color: #005c4b;
+    color: #ffffff;
+}
+
+body.dark-mode .chat-body::-webkit-scrollbar {
+    width: 12px; 
+}
+
+body.dark-mode .chat-body::-webkit-scrollbar-track {
+    background: #2c2f33; 
+    border-radius: 10px; 
+}
+
+body.dark-mode .chat-body::-webkit-scrollbar-thumb {
+    background-color: #075e54; 
+    border-radius: 10px; 
+    border: 3px solid #2c2f33; 
+}
+
+body.dark-mode .chat-body::-webkit-scrollbar-thumb:hover {
+    background-color: #007567; 
+}
+
+/* Style for scrollbar in light mode */
+body.light-mode .chat-body::-webkit-scrollbar {
+    width: 12px; 
+}
+
+body.light-mode .chat-body::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+}
+
+body.light-mode .chat-body::-webkit-scrollbar-thumb {
+    background-color: #747474; 
+    border-radius: 10px; 
+    border: 3px solid #f1f1f1; 
+}
+
+body.light-mode .chat-body::-webkit-scrollbar-thumb:hover {
+    background-color: #075e54; 
+}
+
+/* Light mode styles for the button */
+body.light-mode #toggleMode {
+    background-color: #fff; 
+    color: #000; 
+    border-color: #e5ddd5; 
+}
+
+/* Dark mode styles for the button */
+body.dark-mode #toggleMode {
+    background-color: #202c33; 
+    color: #fff; 
+    border-color: #2c2f33; 
+}
+
+/* Light mode (default) */
+body.light-mode {
+    background-color: #e5ddd5; 
+}
+
+body.light-mode .chat-header {
+    background-color: #075e54; 
+}
+
+body.light-mode .message-received {
+    background-color: #fff;
+    color: #000;
+}
+
+body.light-mode .message-sent {
+    background-color: #dcf8c6;
+    color: #000;
+}
+
+
+/* Mobile screen styles (max-width: 768px) */
+@media (max-width: 768px) {
+    .chat-container {
+        max-width: 95vw; 
+        height: 85vh; 
+    }
+
+    .chat-header {
+        padding: 8px;
+    }
+
+    .chat-info h3 {
+        font-size: 14px; 
+    }
+
+    .chat-info p {
+        font-size: 10px; 
+    }
+
+    .chat-body {
+        padding: 10px; 
+    }
+
+    .message {
+        max-width: 90%; 
+        font-size: 14px; 
+    }
+
+    .message-time {
+        font-size: 9px; 
+    }
+}
